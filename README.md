@@ -1,7 +1,13 @@
 Associative Arrays
 ==================
 
-Starter code for a CSC-207 project on associative arrays.
+Associative Arrays (Mini Project 3) by Mitch Paiva
 
-_Students must replace the contents of this file with appropriate
-contents, including class, author, date, and URL._
+October 3rd, 2024
+
+CSC-207 Fall2024 Section 1.
+Professor Samuel Rebelsky
+
+GitHub Repository: <https://github.com/mitchydev/mp-associative-arrays-maven>
+
+
