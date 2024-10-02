@@ -137,8 +137,17 @@ public class AssociativeArray<K, V> {
    * @param key The key to remove.
    */
   public void remove(K key) {
-
-    // STUB
+    for (int i = 0; i < this.size; i++) {
+      if (this.pairs[i].key.equals(key)) {
+        for (int x = i; i < this.size; x++) {
+          this.pairs[x] = this.pairs[x - 1];
+        } // if statement
+        this.pairs[this.size - 1] = null;
+        this.size--;
+        return;
+      } // if statement.
+    } // for loop.
+    return;
   } // remove(K)
 
   /**
