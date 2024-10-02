@@ -91,7 +91,7 @@ public class AssociativeArray<K, V> {
    *   If the client provides a null key.
    */
   public void set(K key, V value) throws NullKeyException {
-    // STUB
+    if (key == null)
   } // set(K,V)
 
   /**
