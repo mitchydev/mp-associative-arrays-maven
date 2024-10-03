@@ -9,6 +9,8 @@ CSC-207 Fall2024 Section 1.
 Professor Samuel Rebelsky
 
 **Resources Used**
+
+
 -Mentors: I recieved help from the Grinnell 2024 Fall Computer Science tutors and some help from Professor Rebelsky.
 
 
