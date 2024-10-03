@@ -9,7 +9,7 @@ import static java.lang.reflect.Array.newInstance;
  * @param <K> the key type
  * @param <V> the value type
  *
- * @author Your Name Here
+ * @author Mitchell Piva
  * @author Samuel A. Rebelsky
  */
 public class AssociativeArray<K, V> {
@@ -117,7 +117,7 @@ public class AssociativeArray<K, V> {
     this.pairs[this.size] = new KVPair(key, value);
     this.size++;
     return;
-  }// set(K,V)
+  } // set(K,V)
 
   /**
    * Get the value associated with key.
