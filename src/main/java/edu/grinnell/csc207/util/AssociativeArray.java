@@ -60,7 +60,11 @@ public class AssociativeArray<K, V> {
    * @return a new copy of the array
    */
   public AssociativeArray<K, V> clone() {
-    return null; // STUB
+    AssociativeArray<K, V> cloned = new AssociativeArray<K, V>();
+    for (int i = 0; i < this.size; i++) {
+      this.pairs[i] = this.pairs[i].clone();
+    } // for loop
+    return cloned; // STUB
   } // clone()
 
   /**
@@ -69,8 +73,14 @@ public class AssociativeArray<K, V> {
    * @return a string of the form "{Key0:Value0, Key1:Value1, ... KeyN:ValueN}"
    */
   public String toString() {
-    return "{}"; // STUB
-  } // toString()
+    String printed = null;
+    for (int i = 0; i < this.size; i++) {
+      printed += this.pairs[i].key;
+      printed += ",";
+      printed += this.pairs[i].val;
+    } // toString()
+    return printed;
+  }
 
   // +----------------+----------------------------------------------
   // | Public Methods |
@@ -89,10 +99,17 @@ public class AssociativeArray<K, V> {
       throw new NullKeyException();
     } // if statement
     for (int i = 0; i < this.size; i++) {
-      if (this.pairs[i].key.equals(key))
+      if (this.pairs[i].key.equals(key)) {
         this.pairs[i].val = value;
-      return;
+        return;
+      } // if statement
     } // for loop
+    if (this.size == this.pairs.length) {
+      expand();
+    } // if statement
+    this.pairs[this.size] = new KVPair(key, value);
+    this.size++;
+    return;
   }// set(K,V)
 
   /**
