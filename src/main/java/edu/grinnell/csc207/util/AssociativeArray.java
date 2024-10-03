@@ -69,22 +69,25 @@ public class AssociativeArray<K, V> {
     return cloned;
   } // clone()
 
-  
+
   /**
    * Convert the array to a string.
    *
    * @return a string of the form "{Key0:Value0, Key1:Value1, ... KeyN:ValueN}"
    */
   public String toString() {
-    String printed = null;
+    String printed = "{";
     for (int i = 0; i < this.size; i++) {
+      if (i > 0) {
+        printed += ", ";
+      } // if statement
       printed += this.pairs[i].key;
       printed += ":";
       printed += this.pairs[i].val;
-      printed += ", ";
     } // toString()
+    printed += "}";
     return printed;
-  }
+  } // if statement
 
   // +----------------+----------------------------------------------
   // | Public Methods |
@@ -131,7 +134,7 @@ public class AssociativeArray<K, V> {
         return this.pairs[i].val;
       } // if statement
     } // for loop
-    throw new KeyNotFoundException();
+    throw new KeyNotFoundException("Key is null.");
   } // get(K)
 
   /**
@@ -160,8 +163,8 @@ public class AssociativeArray<K, V> {
   public void remove(K key) {
     for (int i = 0; i < this.size; i++) {
       if (this.pairs[i].key.equals(key)) {
-        for (int x = i; i < this.size; x++) {
-          this.pairs[x] = this.pairs[x - 1];
+        for (int x = (i + 1); x < this.size; x++) {
+          this.pairs[x - 1] = this.pairs[x];
         } // if statement
         this.pairs[this.size - 1] = null;
         this.size--;
