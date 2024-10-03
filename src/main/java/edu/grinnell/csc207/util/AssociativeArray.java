@@ -205,7 +205,12 @@ public class AssociativeArray<K, V> {
    * @throws KeyNotFoundException If the key does not appear in the associative array.
    */
   int find(K key) throws KeyNotFoundException {
-    throw new KeyNotFoundException(); // STUB
+    for (int i = 0; i < this.size; i++) {
+      if (this.pairs[i].key.equals(key)) {
+        return i;
+      } // if statement
+    } // for loop
+    throw new KeyNotFoundException("Key not found.");
   } // find(K)
 
 } // class AssociativeArray
