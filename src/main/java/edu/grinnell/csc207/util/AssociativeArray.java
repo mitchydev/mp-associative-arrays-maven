@@ -61,12 +61,15 @@ public class AssociativeArray<K, V> {
    */
   public AssociativeArray<K, V> clone() {
     AssociativeArray<K, V> cloned = new AssociativeArray<K, V>();
+    cloned.pairs = new KVPair[this.pairs.length];
     for (int i = 0; i < this.size; i++) {
-      this.pairs[i] = this.pairs[i].clone();
+      cloned.pairs[i] = new KVPair(this.pairs[i].key, this.pairs[i].val);
     } // for loop
-    return cloned; // STUB
+    cloned.size = this.size;
+    return cloned;
   } // clone()
 
+  
   /**
    * Convert the array to a string.
    *
@@ -76,8 +79,9 @@ public class AssociativeArray<K, V> {
     String printed = null;
     for (int i = 0; i < this.size; i++) {
       printed += this.pairs[i].key;
-      printed += ",";
+      printed += ":";
       printed += this.pairs[i].val;
+      printed += ", ";
     } // toString()
     return printed;
   }
